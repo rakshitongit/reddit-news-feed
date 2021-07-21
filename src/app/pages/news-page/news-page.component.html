@@ -1,0 +1,48 @@
+<div (scroll)="onScroll($event)" class="border-outer" #borderdiv>
+<div class="item" style="padding: 10px;" *ngIf="news.length==0">
+    <ngx-skeleton-loader count="8" appearance="circle"></ngx-skeleton-loader>
+</div>
+
+<div class="discusBox" *ngFor="let singleNews of news">
+ <div style="background-image: url({{singleNews.data.thumbnail}}); width: 15vh; height: 16vh; background-repeat: no-repeat;"></div>
+
+ <div class="discusTitle">
+   <h3>{{singleNews.data.title}}</h3> 
+ </div> 
+
+ <div class="discusBrief">
+   <p>This is the short brief about it.</p>    
+
+ </div>
+
+ <div class="discusMeta">
+
+   <div class="discusMetaPostedOn">
+     <span>Posted on: </span>
+     <span class="discusMetaPostedOnDate">
+       {{singleNews.data.created | date: 'shortDate'}}
+     </span>
+   </div>
+
+   <div class="discusBy">
+     <span>by</span>
+     <b>
+       {{singleNews.data.author}}
+     </b>
+   </div>
+
+   <div class="discussUp">
+    <span><img src="../../../assets/imgs/like-and-heart-icon-live-stream-video-chat-likes-vector-24999934.ico" height="15"></span>
+    <b>
+      {{singleNews.data.ups}}
+    </b>
+  </div>
+
+   <div class="discusLink">
+     <a routerLink="/news-details/{{singleNews.data.id}}" (click)="sendData(singleNews)">View &rarr;</a>
+   </div>
+ </div>
+</div>
+<div style="margin-top: 20px;">TODO: Here Further Infinite scroller can be implemented...</div>
+<button (click)="toTopOfPage()" id="myBtn" title="Go to top" #b>Top</button>
+</div>
