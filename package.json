@@ -1,6 +1,6 @@
 {
-  "name": "novas",
-  "version": "0.0.0",
+  "name": "reddit-web-crawler",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

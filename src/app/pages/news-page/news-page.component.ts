@@ -87,6 +87,6 @@ export class ChildData {
     selftext!: string
 }
 
-let TYPES = [
+const TYPES = [
     "angular", "react", "java", "javascript", "cpp", "python", "de", "news", "linux", "windows", "quantum", "chemistry", "physics", "mathematics", "robotics", "software", "hardware"
 ]

@@ -13,11 +13,7 @@ export class NewsDetailsContentComponent implements OnInit {
     @Input('newsContent')
     newsContents!: ChildData
 
-    @ViewChild('contents')
-    dataContent!: ElementRef
-
     ngOnInit(): void {
-        //this.dataContent.nativeElement.innerHTML = this.newsContents.selftext_html
     }
 
 }
