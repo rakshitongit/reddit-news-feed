@@ -1,1 +1,23 @@
-<p>news-details-content works!</p>
+<div class="page">
+    <h1>NEWS</h1>
+    <div class="archive">
+      <article class="article">
+          <div>
+                Category: <a href="https://www.reddit.com/r/{{newsContents.subreddit}}" target="_blank">{{newsContents.subreddit}}</a>
+          </div>
+          <div class="row">
+              <div class="col-8">
+                <img *ngIf="newsContents.thumbnail !== 'self'" [src]="newsContents.thumbnail" alt="" width="500" height="400" />
+             </div>
+             <div class="col-2">
+                <b>Title: </b><a href="https://www.reddit.com{{newsContents.permalink}}" target="_blank">{{newsContents.title}}</a>
+             </div>
+          </div>
+          <p [innerHtml]="newsContents.selftext | safeHtml"></p>
+          <div>
+            <div class="icon"><i class="fa fa-comments-o"></i> {{newsContents.num_comments}}</div>
+          </div>
+      </article>
+  </div>
+</div>
+<app-news-comments></app-news-comments>

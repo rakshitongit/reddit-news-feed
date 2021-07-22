@@ -1,0 +1,14 @@
+.category {
+    border: 2px solid #aeaeae;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 3px;
+    width: 40vh;
+}
+.box-parent {
+    border: 2px solid #aeaeae;
+    height: 80vh;
+    width: 100vh;
+    border-radius: 5px;
+    overflow: scroll;
+}

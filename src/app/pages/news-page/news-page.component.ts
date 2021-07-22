@@ -78,10 +78,13 @@ export class ChildData {
     id: string = ""
     url: string = ""
     subreddit_subscribers: number = 0
-    created: number = 0
+    created!: number
     subreddit: string = ""
     author: string = ""
     permalink: string = ""
+    num_comments!: number
+    selftext_html!: string
+    selftext!: string
 }
 
 let TYPES = [

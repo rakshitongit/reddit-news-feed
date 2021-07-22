@@ -10,7 +10,7 @@ import { Child } from '../news-page/news-page.component';
 export class NewsPageDetailsComponent implements OnInit {
 
     constructor(private newsService: NewsService) { }
-    currentNews: Child = new Child()
+    public currentNews!: Child;
 
     async ngOnInit() {
         this.currentNews = this.newsService.getCurrentNews()

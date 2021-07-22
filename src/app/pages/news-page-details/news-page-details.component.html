@@ -1,1 +1,4 @@
-<p>news-page-details works!</p>
+<div class="category">Category: <b>{{currentNews.data.subreddit}}</b></div>
+<div class="box-parent">
+    <app-news-details-content [newsContent]="currentNews.data"></app-news-details-content>
+</div>

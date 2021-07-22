@@ -72,6 +72,7 @@
 
   .border-outer {
     border: 2px solid #333;
+    border-radius: 5px;
     padding: 5px;
     overflow: scroll;
     height: 66vh;
@@ -102,4 +103,6 @@
     margin-bottom: 10px;
     padding: 4px;
     border: 2px solid black;
+    border-radius: 5px;
+    width: 65vh;
   }

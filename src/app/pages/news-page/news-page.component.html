@@ -1,5 +1,5 @@
-<div class="input-search">
-  <input class="searchTerm" type="text" name="search-bar" placeholder="Search for Posts..." [(ngModel)]="searchText">
+<div class="input-search form-group">
+  <input class="searchTerm form-input" type="text" name="search-bar" placeholder="Search for Posts..." [(ngModel)]="searchText">
 </div>
 <div (scroll)="onScroll($event)" class="border-outer" #borderdiv>
 <div class="item" style="padding: 10px;" *ngIf="news.length==0">
@@ -13,7 +13,7 @@
  </div> 
 
  <div class="discusBrief">
-   <p>This is the short brief about it.</p>    
+       
 
  </div>
 
@@ -22,21 +22,21 @@
    <div class="discusMetaPostedOn">
      <span>Posted on: </span>
      <span class="discusMetaPostedOnDate">
-       {{singleNews.data.created | date: 'shortDate'}}
+       {{singleNews.data.created | date:'dd/MM/yyyy'}}
      </span>
    </div>
 
    <div class="discusBy">
-     <span>by </span>
+    <div class="icon"><i class="fa fa-user"></i>
      <b>
-       <a href="https://www.reddit.com/user/{{singleNews.data.author}}" target="_blank"> {{singleNews.data.author}}</a>
+       <a href="https://www.reddit.com/user/{{singleNews.data.author}}" style="margin-left: 2px;" target="_blank">{{singleNews.data.author}}</a>
      </b>
+     </div>
    </div>
 
    <div class="discussUp">
-    <span><img src="../../../assets/imgs/like-and-heart-icon-live-stream-video-chat-likes-vector-24999934.ico" height="15"></span>
     <b>
-      {{singleNews.data.ups}}
+      <div class="icon"><i class="fa fa-heart" style="color: red;"></i> {{singleNews.data.ups}}</div>
     </b>
   </div>
 

@@ -9,13 +9,17 @@ import { NewsDetailsContentComponent } from './components/news-details-content/n
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NewsCommentsComponent } from './components/news-comments/news-comments.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsPageComponent,
     NewsPageDetailsComponent,
-    NewsDetailsContentComponent
+    NewsDetailsContentComponent,
+    NewsCommentsComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
