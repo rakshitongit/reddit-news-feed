@@ -1,9 +1,11 @@
+<div class="input-search">
+  <input class="searchTerm" type="text" name="search-bar" placeholder="Search for Posts..." [(ngModel)]="searchText">
+</div>
 <div (scroll)="onScroll($event)" class="border-outer" #borderdiv>
 <div class="item" style="padding: 10px;" *ngIf="news.length==0">
     <ngx-skeleton-loader count="8" appearance="circle"></ngx-skeleton-loader>
 </div>
-
-<div class="discusBox" *ngFor="let singleNews of news">
+<div class="discusBox" *ngFor="let singleNews of news | filter:searchText" (click)="sendData(singleNews)">
  <div style="background-image: url({{singleNews.data.thumbnail}}); width: 15vh; height: 16vh; background-repeat: no-repeat;"></div>
 
  <div class="discusTitle">
@@ -25,9 +27,9 @@
    </div>
 
    <div class="discusBy">
-     <span>by</span>
+     <span>by </span>
      <b>
-       {{singleNews.data.author}}
+       <a href="https://www.reddit.com/user/{{singleNews.data.author}}" target="_blank"> {{singleNews.data.author}}</a>
      </b>
    </div>
 
@@ -38,11 +40,17 @@
     </b>
   </div>
 
+  <div class="discussUp">
+    Sub-category: 
+    <b>
+     <a href="https://www.reddit.com/r/{{singleNews.data.subreddit}}" target="_blank"> {{singleNews.data.subreddit}}</a>
+    </b>
+  </div>
+
    <div class="discusLink">
      <a routerLink="/news-details/{{singleNews.data.id}}" (click)="sendData(singleNews)">View &rarr;</a>
    </div>
  </div>
 </div>
-<div style="margin-top: 20px;">TODO: Here Further Infinite scroller can be implemented...</div>
 <button (click)="toTopOfPage()" id="myBtn" title="Go to top" #b>Top</button>
 </div>

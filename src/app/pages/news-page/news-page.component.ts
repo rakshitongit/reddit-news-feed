@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NewsService } from 'src/app/services/news.service';
 
@@ -10,6 +10,7 @@ import { NewsService } from 'src/app/services/news.service';
 export class NewsPageComponent implements OnInit {
 
     public news: Child[] = []
+    public searchText!: string
 
     @ViewChild('b')
     private mybutton!: ElementRef<ElementCSSInlineStyle>;
@@ -24,7 +25,7 @@ export class NewsPageComponent implements OnInit {
         console.log(this.route.snapshot.data["news"])
     }
 
-    async onScroll(event: any){
+    async onScroll(event: any) {
         // visible height + pixel scrolled >= total height
         if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
             console.log("End of div...");
@@ -36,7 +37,7 @@ export class NewsPageComponent implements OnInit {
         }
         if (event.target.scrollTop > 20 || event.target.scrollTop > 20) {
             this.mybutton.nativeElement.style.display = "block";
-          } else {
+        } else {
             this.mybutton.nativeElement.style.display = "none";
         }
     }
@@ -45,8 +46,12 @@ export class NewsPageComponent implements OnInit {
         this.newsService.setCurrentNews(news)
     }
 
-    async toTopOfPage() {
+    toTopOfPage(): void {
         this.borderDiv.nativeElement.scrollTop = 0
+        this.initializeData()
+    }
+
+    async initializeData() {
         this.news = (await this.newsService.getAllNews().toPromise()).data.children
     }
 

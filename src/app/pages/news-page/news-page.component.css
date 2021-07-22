@@ -1,7 +1,7 @@
 .discusBox {
     border: #333 solid 1px;
-    height: 120px;
-    width: 720px;
+    height: 135px;
+    width: 130vh;
     position: relative;
     margin-bottom: 5px;
   }
@@ -12,7 +12,7 @@
     position: absolute;
     top: 0;
     left: 120px;
-    width: 600px;
+    width: 130vh;
     vertical-align: middle;
   }
   
@@ -23,7 +23,7 @@
   
   .discusBrief {
     height: 60px;
-    width: 600px;
+    width: 130vh;
     position: absolute;
     top: 40px;
     left: 120px;
@@ -32,10 +32,10 @@
   .discusBrief p { padding-left: 6px; }
   
   .discusMeta {
-    height: 20px;
-    width: 600px;
+    height: 30px;
+    width: 115vh;
     position: absolute;
-    top: 100px;
+    top: 115px;
     left: 120px;
     font-size: 11px;
     line-height: 20px;
@@ -74,7 +74,8 @@
     border: 2px solid #333;
     padding: 5px;
     overflow: scroll;
-    height: 55vh;
+    height: 66vh;
+    width: 130vh;
   }
 
   #myBtn {
@@ -95,4 +96,10 @@
   
   #myBtn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+  .input-search {
+    margin-bottom: 10px;
+    padding: 4px;
+    border: 2px solid black;
   }

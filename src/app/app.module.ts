@@ -7,6 +7,8 @@ import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { NewsPageDetailsComponent } from './pages/news-page-details/news-page-details.component';
 import { NewsDetailsContentComponent } from './components/news-details-content/news-details-content.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' })
+    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
